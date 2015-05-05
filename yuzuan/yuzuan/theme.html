@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$meta_robots}>" />
+<meta name="keywords" content="<{$meta_keywords}>" />
+<meta name="description" content="<{$meta_description}>" />
+<meta name="rating" content="<{$meta_rating}>" />
+<meta name="author" content="<{$meta_author}>" />
+<meta name="copyright" content="<{$meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+</head>
+<body>
+
+<table cellspacing="0" id="top">
+	<tr><td class="slogan" colspan="2"><{$xoops_slogan}></td></tr>
+
+    <tr id="header">
+		<td id="headerlogo"><a href="<{$xoops_url}>/"><img src="<{$xoops_imageurl}>logo.gif"></a></td>
+		<td id="headerbanner">　</td>
+    </tr>
+
+    <tr>
+		<td class="slogan">
+<{if $xoops_isuser}>
+		Welcome, <a href="<{$xoops_url}>/user.php"><{$xoops_uname}></a> to <{$xoops_sitename}>
+<{else}>
+		<{$xoops_sitename}>に <a href="<{$xoops_url}>/register.php">新規登録</a>しませんか？
+<{/if}>
+		</td>
+
+		<td class="slogan">&nbsp;</td>
+	</tr>
+</table>
+
+  <table cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="leftcolumn">
+
+        <!-- Start left blocks loop -->
+        <{foreach item=block from=$xoops_lblocks}>
+          <{include file="yuzuan/theme_blockleft.html"}>
+        <{/foreach}>
+        <!-- End left blocks loop -->
+
+      </td>
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+            <td id="centerCcolumn" colspan="2">
+
+            <!-- Start center-center blocks loop -->
+            <{foreach item=block from=$xoops_ccblocks}>
+              <{include file="yuzuan/theme_blockcenter_c.html"}>
+            <{/foreach}>
+            <!-- End center-center blocks loop -->
+
+            </td>
+          </tr>
+          <tr>
+            <td id="centerLcolumn">
+
+            <!-- Start center-left blocks loop -->
+              <{foreach item=block from=$xoops_clblocks}>
+                <{include file="yuzuan/theme_blockcenter_l.html"}>
+              <{/foreach}>
+            <!-- End center-left blocks loop -->
+
+            </td><td id="centerRcolumn">
+
+            <!-- Start center-right blocks loop -->
+              <{foreach item=block from=$xoops_crblocks}>
+                <{include file="yuzuan/theme_blockcenter_r.html"}>
+              <{/foreach}>
+            <!-- End center-right blocks loop -->
+
+            </td>
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content"><{$xoops_contents}></div>
+      </td>
+
+      <{if $xoops_showrblock == 1}>
+
+      <td id="rightcolumn">
+        <!-- Start right blocks loop -->
+        <{foreach item=block from=$xoops_rblocks}>
+          <{include file="yuzuan/theme_blockright.html"}>
+        <{/foreach}>
+        <!-- End right blocks loop -->
+      </td>
+
+      <{/if}>
+
+    </tr>
+  </table>
+
+  <table cellspacing="1">
+    <tr id="footerbar">
+      <td>copyright (c) 2003 OCEAN-NET All right reserved</td>
+    </tr>
+  </table>
+</body>
+</html>
